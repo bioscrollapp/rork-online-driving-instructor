@@ -471,6 +471,17 @@ export default function MockScreen() {
                 {current.question}
               </Text>
 
+              {current.imageUrl ? (
+                <View style={styles.mockQImageWrap}>
+                  <Image
+                    source={{ uri: current.imageUrl }}
+                    style={styles.mockQImage}
+                    resizeMode="contain"
+                    testID="mock-question-image"
+                  />
+                </View>
+              ) : null}
+
               <View style={styles.qOptions}>
                 {current.options.map((opt, i) => {
                   const isPicked = picked === i;

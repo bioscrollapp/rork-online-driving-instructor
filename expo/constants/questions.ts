@@ -5,6 +5,7 @@ export type QuizQuestion = {
   options: string[];
   correctIndex: number;
   explanation: string;
+  imageUrl?: string;
 };
 
 const questions: QuizQuestion[] = [
@@ -2192,6 +2193,146 @@ const questions: QuizQuestion[] = [
     correctIndex: 1,
     explanation:
       "Using a hand-held phone is illegal and seriously affects your concentration and reactions, especially at motorway speeds.",
+  },
+  {
+    id: "v1",
+    category: "Road Signs",
+    question: "What does this sign mean?",
+    options: ["No entry for vehicular traffic", "No stopping", "No through road", "End of restrictions"],
+    correctIndex: 0,
+    explanation:
+      "A red circle with a white horizontal bar means no entry for vehicular traffic. Never pass it — you'd be driving the wrong way down a one-way street.",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/UK_traffic_sign_616.svg/240px-UK_traffic_sign_616.svg.png",
+  },
+  {
+    id: "v2",
+    category: "Road Signs",
+    question: "What does this sign mean?",
+    options: ["Roundabout ahead", "Mini-roundabout", "Ring road", "Turn around"],
+    correctIndex: 0,
+    explanation:
+      "A red triangle with three curved arrows warns of a roundabout ahead. Slow down, choose your lane early, and give way to traffic from the right.",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/UK_traffic_sign_510.svg/240px-UK_traffic_sign_510.svg.png",
+  },
+  {
+    id: "v3",
+    category: "Road Signs",
+    question: "What does this sign mean?",
+    options: ["Stop and give way", "Give way", "No priority", "End of motorway"],
+    correctIndex: 0,
+    explanation:
+      "The red octagonal STOP sign is the only octagonal road sign in the UK. You must come to a complete stop at the line before proceeding.",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/UK_traffic_sign_601.1.svg/240px-UK_traffic_sign_601.1.svg.png",
+  },
+  {
+    id: "v4",
+    category: "Road Signs",
+    question: "What does this sign mean?",
+    options: [
+      "National speed limit applies",
+      "End of all restrictions",
+      "No vehicles",
+      "De-restricted zone for cycles only",
+    ],
+    correctIndex: 0,
+    explanation:
+      "A white circle with a black diagonal stripe means the national speed limit applies — 60mph on single carriageways, 70mph on dual carriageways and motorways for cars.",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/UK_traffic_sign_671.svg/240px-UK_traffic_sign_671.svg.png",
+  },
+  {
+    id: "v5",
+    category: "Road Signs",
+    question: "What does this sign warn of?",
+    options: ["Children crossing", "School crossing patrol", "Pedestrians in road", "Playground"],
+    correctIndex: 0,
+    explanation:
+      "This triangular warning sign with two children indicates a school or area where children are likely to be crossing. Slow down and stay alert.",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/UK_traffic_sign_545.svg/240px-UK_traffic_sign_545.svg.png",
+  },
+  {
+    id: "v6",
+    category: "Road Signs",
+    question: "What does this sign mean?",
+    options: [
+      "Turn left ahead",
+      "Keep left",
+      "One way traffic",
+      "Left-hand bend",
+    ],
+    correctIndex: 1,
+    explanation:
+      "A blue circle with a white arrow pointing down-left is a mandatory 'keep left' instruction — usually found at islands or bollards.",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/UK_traffic_sign_610.svg/240px-UK_traffic_sign_610.svg.png",
+  },
+  {
+    id: "v7",
+    category: "Road Signs",
+    question: "What does this sign mean?",
+    options: [
+      "Slippery road",
+      "Loose chippings",
+      "Skid marks ahead",
+      "Tyres lose grip",
+    ],
+    correctIndex: 0,
+    explanation:
+      "A triangular warning sign with a skidding car warns of a slippery road. Reduce speed, increase your following distance and avoid harsh braking.",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/UK_traffic_sign_557.svg/240px-UK_traffic_sign_557.svg.png",
+  },
+  {
+    id: "v8",
+    category: "Road Signs",
+    question: "What does this road marking mean?",
+    options: [
+      "Stop line at signals or police control",
+      "Give way to traffic on a major road",
+      "Cycle lane edge",
+      "End of one-way street",
+    ],
+    correctIndex: 1,
+    explanation:
+      "A double broken white line across the mouth of a junction means give way to traffic on the major road. A single solid line would mean stop.",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/UK_traffic_sign_602.svg/240px-UK_traffic_sign_602.svg.png",
+  },
+  {
+    id: "v9",
+    category: "Road Signs",
+    question: "What does this sign warn you about?",
+    options: [
+      "Steep hill downwards",
+      "Steep hill upwards",
+      "Slope warning for lorries only",
+      "Road narrows",
+    ],
+    correctIndex: 0,
+    explanation:
+      "A triangular sign with a downward-sloping arrow and a percentage warns of a steep descent. Select a low gear before you start down to keep control without overusing the brakes.",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/UK_traffic_sign_524.1.svg/240px-UK_traffic_sign_524.1.svg.png",
+  },
+  {
+    id: "v10",
+    category: "Road Signs",
+    question: "What does this sign mean?",
+    options: [
+      "No overtaking",
+      "Two-way traffic ahead",
+      "Single file traffic",
+      "Overtaking permitted",
+    ],
+    correctIndex: 0,
+    explanation:
+      "A red-bordered circle showing two cars side by side means overtaking is prohibited. The ban ends at a matching 'end of no overtaking' sign.",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/UK_traffic_sign_632.svg/240px-UK_traffic_sign_632.svg.png",
   },
 ];
 

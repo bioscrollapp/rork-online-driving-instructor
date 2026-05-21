@@ -506,6 +506,17 @@ export default function QuizScreen() {
                 {current.question}
               </Text>
 
+              {current.imageUrl ? (
+                <View style={styles.qImageWrap}>
+                  <Image
+                    source={{ uri: current.imageUrl }}
+                    style={styles.qImage}
+                    resizeMode="contain"
+                    testID="quiz-question-image"
+                  />
+                </View>
+              ) : null}
+
               <View style={styles.options}>
               {current.options.map((opt, i) => {
                 const isSelected = selected === i;
@@ -836,6 +847,18 @@ const styles = StyleSheet.create({
     marginBottom: 22,
     paddingRight: 80,
   },
+  qImageWrap: {
+    alignSelf: "center",
+    width: "70%",
+    aspectRatio: 1,
+    marginBottom: 18,
+    borderRadius: 18,
+    backgroundColor: Colors.warmWhite,
+    borderWidth: 2,
+    borderColor: Colors.black,
+    padding: 10,
+  },
+  qImage: { width: "100%", height: "100%" },
   options: { gap: 12 },
   option: {
     flexDirection: "row",
