@@ -1,4 +1,4 @@
-import { Stack, router, useLocalSearchParams } from "expo-router";
+import { Stack, router, useLocalSearchParams, useNavigation } from "expo-router";
 import * as Haptics from "expo-haptics";
 import { Bell, ChevronLeft, Flame, RotateCcw } from "lucide-react-native";
 import React, { useCallback, useEffect, useMemo, useRef } from "react";
@@ -66,10 +66,11 @@ export default function StreakLostScreen() {
     router.replace("/settings");
   }, []);
 
+  const navigation = useNavigation();
   const onClose = useCallback(() => {
-    if (router.canGoBack()) router.back();
+    if (navigation.canGoBack()) router.back();
     else router.replace("/(tabs)/home");
-  }, []);
+  }, [navigation]);
 
   const flameOpacity = flameAnim.interpolate({
     inputRange: [0, 0.6, 1],

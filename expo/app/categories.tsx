@@ -1,4 +1,4 @@
-import { Stack, router } from "expo-router";
+import { Stack, router, useNavigation } from "expo-router";
 import * as Haptics from "expo-haptics";
 import {
   Beer,
@@ -87,11 +87,12 @@ export default function CategoriesScreen() {
   const cardW = Math.floor((width - sidePad * 2 - gap * (cols - 1)) / cols);
 
   const [selectedId, setSelectedId] = useState<CategoryId | null>(null);
+  const navigation = useNavigation();
 
   const onBack = useCallback(() => {
-    if (router.canGoBack()) router.back();
+    if (navigation.canGoBack()) router.back();
     else router.replace("/(tabs)/practice");
-  }, []);
+  }, [navigation]);
 
   const onTap = useCallback((cat: Category) => {
     hapticLight();

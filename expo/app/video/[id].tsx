@@ -1,4 +1,4 @@
-import { router, useLocalSearchParams } from "expo-router";
+import { router, useLocalSearchParams, useNavigation } from "expo-router";
 import { ArrowLeft, ArrowRight, ChevronRight, Clock, Play, Tag } from "lucide-react-native";
 import React, { useMemo } from "react";
 import {
@@ -71,6 +71,7 @@ const TOPIC_DESCRIPTIONS: Record<string, string> = {
 export default function VideoPlayerScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const lesson = findVideoLesson(typeof id === "string" ? id : "");
+  const navigation = useNavigation();
 
   const related: QuizQuestion[] = useMemo(() => {
     if (!lesson) return [];
@@ -82,7 +83,7 @@ export default function VideoPlayerScreen() {
   }, [lesson]);
 
   const onBack = () => {
-    if (router.canGoBack()) router.back();
+    if (navigation.canGoBack()) router.back();
     else router.replace("/(tabs)/videos");
   };
 

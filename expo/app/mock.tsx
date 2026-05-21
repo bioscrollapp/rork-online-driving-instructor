@@ -1,4 +1,4 @@
-import { router, Stack } from "expo-router";
+import { router, Stack, useNavigation } from "expo-router";
 import * as Haptics from "expo-haptics";
 import {
   ArrowLeft,
@@ -114,10 +114,11 @@ export default function MockScreen() {
   const total = set.length;
   const current = set[index];
 
+  const navigation = useNavigation();
   const onBack = useCallback(() => {
-    if (router.canGoBack()) router.back();
+    if (navigation.canGoBack()) router.back();
     else router.replace("/(tabs)/home");
-  }, []);
+  }, [navigation]);
 
   const startTest = useCallback(
     (m: Mode) => {

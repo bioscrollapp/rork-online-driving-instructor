@@ -1,4 +1,4 @@
-import { router, Stack } from "expo-router";
+import { router, Stack, useNavigation } from "expo-router";
 import {
   Bell,
   ChevronLeft,
@@ -160,11 +160,12 @@ export default function SettingsScreen() {
   const { settings, update } = useSettings();
   const { user, isGuest, signOut } = useAuth();
   const [pickerOpen, setPickerOpen] = useState<boolean>(false);
+  const navigation = useNavigation();
 
   const goBack = useCallback(() => {
-    if (router.canGoBack()) router.back();
+    if (navigation.canGoBack()) router.back();
     else router.replace("/(tabs)/home");
-  }, []);
+  }, [navigation]);
 
   const onRate = useCallback(async () => {
     console.log("[Settings] rate");

@@ -1,4 +1,4 @@
-import { Stack, router, useLocalSearchParams } from "expo-router";
+import { Stack, router, useLocalSearchParams, useNavigation } from "expo-router";
 import * as Haptics from "expo-haptics";
 import { Award, Medal, Sparkles, Trophy, Zap } from "lucide-react-native";
 import React, { useCallback, useEffect, useMemo, useRef } from "react";
@@ -209,13 +209,14 @@ export default function LevelUpScreen() {
     listAnim,
   ]);
 
+  const navigation = useNavigation();
   const onContinue = useCallback(() => {
     if (Platform.OS !== "web") {
       Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium).catch(() => {});
     }
-    if (router.canGoBack()) router.back();
+    if (navigation.canGoBack()) router.back();
     else router.replace("/(tabs)/home");
-  }, []);
+  }, [navigation]);
 
   const rotation = badgeRotate.interpolate({
     inputRange: [0, 1],

@@ -1,5 +1,5 @@
 import { LinearGradient } from "expo-linear-gradient";
-import { router, Stack, useLocalSearchParams } from "expo-router";
+import { router, Stack, useLocalSearchParams, useNavigation } from "expo-router";
 import { Apple, Check, ChevronLeft, Cloud, Crown, Shield, Zap } from "lucide-react-native";
 import React, { useCallback, useEffect, useMemo } from "react";
 import {
@@ -42,11 +42,12 @@ export default function SignInScreen() {
   }, [rawReason]);
 
   const { user, signIn, isSigningIn, error, clearError } = useAuth();
+  const navigation = useNavigation();
 
   const goBack = useCallback(() => {
-    if (router.canGoBack()) router.back();
+    if (navigation.canGoBack()) router.back();
     else router.replace("/(tabs)/home");
-  }, []);
+  }, [navigation]);
 
   useEffect(() => {
     if (user) {

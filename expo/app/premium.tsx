@@ -1,5 +1,5 @@
 import { LinearGradient } from "expo-linear-gradient";
-import { router, Stack } from "expo-router";
+import { router, Stack, useNavigation } from "expo-router";
 import {
   Check,
   ChevronLeft,
@@ -57,11 +57,12 @@ export default function PremiumScreen() {
   const { width } = useWindowDimensions();
   const sophieSize = Math.min(width * 0.34, 150);
   const { user, isGuest } = useAuth();
+  const navigation = useNavigation();
 
   const goBack = useCallback(() => {
-    if (router.canGoBack()) router.back();
+    if (navigation.canGoBack()) router.back();
     else router.replace("/(tabs)/home");
-  }, []);
+  }, [navigation]);
 
   const handleOutcome = useCallback(
     (outcome: PurchaseOutcome, mode: "purchase" | "restore") => {
